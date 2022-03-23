@@ -27,7 +27,7 @@ const createCollege = async function (req, res) {
 
         if (!(isValidRequestBody(requestBody))) return res.status(400).send({ status: false, msg: "please provide college details in request body" })
 
-        const { name, fullName, logoLink } = requestBody
+        const { name, fullName, logoLink } = requestBody  // obj des
 
 
         if (!isValidRequestValue(name)) return res.status(400).send({ status: false, msg: "please provide correct college name abbreviation" })

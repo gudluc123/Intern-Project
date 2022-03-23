@@ -54,17 +54,19 @@ let validateMobile = function (mobile) {
 const createInterns = async function (req, res) {
     try {
         let requestBody = req.body
-
+        
+    // console.log(requestBody)
 
         if (!isValidRequestBody(requestBody)) return res.status(400).send({ status: false, msg: "please provide intern details in request body" })
 
-
         const { name, email, mobile, collegeId } = requestBody
-
+        
+        
 
         if (!isValidRequestValue(name)) return res.status(400).send({ status: false, msg: "please provide correct intern name" })
+        
         if (!isString(name)) return res.status(400).send({ status: false, msg: "please provide correct intern name in string form" })
-
+        
 
         if (!isValidRequestValue(email)) return res.status(400).send({ status: false, msg: "please provide correct email address" })
         if (!isString(email)) return res.status(400).send({ status: false, msg: "please provide your email in string case" })
